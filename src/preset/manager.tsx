@@ -1,5 +1,4 @@
-import { addons } from '@storybook/manager-api';
-import { Addon_TypesEnum } from '@storybook/types';
+import { addons, types } from '@storybook/manager-api';
 import { themes } from '@storybook/theming';
 import * as React from 'react';
 
@@ -19,7 +18,7 @@ addons.setConfig({
 addons.register('storybook/dark-mode', (api) => {
   addons.add('storybook/dark-mode', {
     title: 'dark mode',
-    type: Addon_TypesEnum.TOOL,
+    type: types.TOOL,
     match: ({ viewMode }) => viewMode === 'story' || viewMode === 'docs',
     render: () => <Tool api={api} />,
   });
